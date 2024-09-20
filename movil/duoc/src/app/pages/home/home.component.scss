@@ -1,0 +1,39 @@
+ion-content {
+  --background: #ffffffd6; // Fondo blanco para todo el contenido
+  display: flex;
+  flex-direction: column; // Asegura que los elementos hijos se apilen verticalmente
+  padding: 0; // Elimina el padding para evitar desplazamientos
+  box-sizing: border-box;
+}
+
+app-header {
+  flex-shrink: 0; // Evita que el header se encoja
+}
+
+.contenedor-menu {
+  display: flex;
+  justify-content: space-around; // Distribuye los elementos uniformemente
+  align-items: center;
+  padding: 20px;
+  width: 100%; // Asegura que el contenedor ocupe todo el ancho
+  box-sizing: border-box; // Incluye el padding en el ancho total
+  flex-shrink: 0; // Evita que el contenedor se encoja
+}
+
+.menu-item {
+  flex: 1; // Cada item ocupa el mismo espacio
+  text-align: center; // Centra el texto dentro de cada item
+}
+
+.menu-item a {
+  display: block;
+  padding: 10px;
+  --background: #ffffffd6;// Fondo gris claro para los enlaces
+  color: #000; // Color del texto
+  text-decoration: none; // Sin subrayado
+  border-radius: 5px; // Bordes redondeados
+}
+
+.menu-item a:hover {
+  background-color: #e0e0e0; // Fondo más oscuro al pasar el ratón
+}

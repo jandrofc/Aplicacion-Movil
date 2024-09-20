@@ -1,0 +1,23 @@
+
+.cabecera {
+  display: flex;
+  justify-content: center; // Centra el contenido
+  align-items: center;
+  padding: 10px;
+}
+
+.logo {
+  width: 50%;
+  padding: 20px; // Ajusta el tamaño del logo según sea necesario
+  height: auto;
+}
+
+.titulo {
+  font-size: 1.8rem; // Ajusta el tamaño del texto según sea necesario
+  color: #000000; // Cambia el color del texto a negro
+}
+
+.saludar {
+  padding-left: 10px;
+  color: #000000; // Color del texto de los párrafos
+}

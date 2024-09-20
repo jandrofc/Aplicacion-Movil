@@ -1,0 +1,15 @@
+<ion-content>
+  <div class="padre">
+    <div class="cabecera">
+      <ion-img class="logo" src="../../assets/img/duoc.png" alt="Asistencia"></ion-img>
+      <span class="titulo">Asistencia</span>
+    </div>
+    <div>
+      <ion-input label="Usuario" labelPlacement="floating" [counter]="true" maxlength="50"></ion-input>
+
+    <ion-input  type="password" label="Contraseña" labelPlacement="floating" [counter]="true" maxlength="50"></ion-input>
+    </div>
+    <ion-button shape="round" [routerLink]="('home')">Ingresar</ion-button>
+    <a [routerLink]="('password')">recuperar contraseña</a>
+  </div>
+</ion-content>
