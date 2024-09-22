@@ -34,7 +34,7 @@ app-header {
   background-color: #1b224f;   /* Color de fondo del cuadro */
 }
 
-.boton {
+ion-button{
   width: 60%;                  /* Ancho del enlace */
   padding: 10px 20px;           /* Tamaño del enlace */
   background-color: #ffbf00;;    /* Color de fondo del enlace */
@@ -46,8 +46,8 @@ app-header {
   text-align: center;           /* Centrar el texto */
   cursor: pointer;              /* Cambiar el cursor cuando se pasa por encima */
   transition: background-color 0.3s; /* Transición suave para hover */
-}
 
-.boton:hover {
+}
+ion-button:hover {
   background-color: #0056b3;    /* Cambiar el color al pasar el mouse */
 }

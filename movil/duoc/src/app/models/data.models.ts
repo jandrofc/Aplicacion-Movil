@@ -12,5 +12,11 @@ export const usuarioSimulados: usuario[] = [
         nombreCompleto: 'Cristobal Cereno',
         usuario: 'cri.cereno',
         clave: '12345'
+    },
+    {
+        id: 3,
+        nombreCompleto: 'Francisco Esteva',
+        usuario: 'Mekaiter',
+        clave: 'hola12345'
     }
 ];
