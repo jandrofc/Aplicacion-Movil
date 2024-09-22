@@ -1,6 +1,13 @@
 <ion-header>
     <div class="cabecera">
-      <ion-img class="logo" src="../../assets/img/duoc.png" alt="Asistencia"></ion-img>
-      <span class="titulo">Asistencia</span>
+      <span class="titulo"><b>RegistrAPP</b></span>
+      <ion-img class="logo" src="../../assets/img/duoc2.png" alt="Asistencia"></ion-img>
+    </div>
+    <div class="saludar">
+      @if (usuario!==''){
+        <span class="saludo">¡Bienvenido</span>
+        <span class="nombre">{{usuario}}</span>
+        <span class="saludo">!</span>
+      }
     </div>
 </ion-header>

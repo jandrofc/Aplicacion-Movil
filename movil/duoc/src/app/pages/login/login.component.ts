@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { usuario } from './../../models/bd.models';
+import { Component, inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +11,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent  implements OnInit {
 
+  usuario: string = '';
+  clave: string = '';
+
+  private authService = inject(AuthService);
+  private router = inject(Router);
+
+  private loginFailSubject = new BehaviorSubject<boolean>(false);
+  loginFail$ = this.loginFailSubject.asObservable();
+  loginFail: boolean = false;
+
+  ngOnInit(): void {
+    this.authService.loginFail$.subscribe(loginFail => this.loginFail = loginFail);
+  }
+
   constructor() { }
 
-  ngOnInit() {}
+  isLoading: boolean = false;
+  async login(usuario: string, clave: string): Promise<void> { 
+    this.isLoading = true; 
+    this.loginFail = false; 
 
+    const isAuthenticated = await this.authService.BuscarBD(usuario, clave);
+
+    this.isLoading = false;
+
+    if (isAuthenticated) {
+      this.usuario = '';
+      this.clave = '';
+      this.router.navigate(['/home']);
+    } else {
+      this.loginFail = true;
+    }
+  
 }
+  
+  }

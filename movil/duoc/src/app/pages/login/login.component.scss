@@ -20,6 +20,7 @@ ion-content {
 
 .cabecera {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px; // Espacio entre el header y los inputs
@@ -33,7 +34,7 @@ ion-content {
 
 .titulo {
   font-size: 1.5rem; // Ajusta el tamaño del texto según sea necesario
-  color: #000000; // Cambia el color del texto si es necesario
+  color: #ffbf00; // Cambia el color del texto si es necesario
 }
 
 ion-item {
