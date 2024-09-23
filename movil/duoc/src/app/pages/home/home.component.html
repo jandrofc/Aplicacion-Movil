@@ -2,12 +2,17 @@
   <app-header></app-header>
   <div class="contenedor-menu">
     <div class="menu">
-      <ion-button [routerLink]="('home')" >Clases</ion-button>
-      <ion-button [routerLink]="('home')" >Asistencia</ion-button>
-      <ion-button [routerLink]="('home')" >Perfil</ion-button>
+      <ion-button [routerLink]="('perfil')" class="boton">Perfil</ion-button>
+      @if(usuario?.tipo == 'alumno'){
+        <ion-button [routerLink]="('marcar-asistencia')" class="boton">Marcar Asistencia</ion-button>}
+      @else if(usuario?.tipo == 'profesor'){
+        <ion-button [routerLink]="('seleccionar-clase')" class="boton">Seleccionar Clase</ion-button>
+        <ion-button [routerLink]="('registro-asistencia')" class="boton">Registro de Asistencia</ion-button>
+      }
+      @else{}
     </div>
   </div>
   <ion-card-content>
-    <!-- Contenido adicional aquí -->
+    <!-- Aquí puedes mostrar el contenido del perfil o la clase seleccionada -->
   </ion-card-content>
 </ion-content>

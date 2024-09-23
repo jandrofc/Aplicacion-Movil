@@ -4,8 +4,8 @@
       <ion-img class="logo" src="../../assets/img/duoc2.png" alt="Asistencia"></ion-img>
     </div>
     <div class="saludar">
-      @if (usuario!==''){
-        <span class="saludo">¡Bienvenido <span class="nombre">{{usuario}}</span> !</span>
+      @if (usuario!==null){
+        <span class="saludo">¡Bienvenido <span class="nombre">{{usuario.nombreCompleto}}</span> !</span>
       }
     </div>
 </ion-header>

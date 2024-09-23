@@ -1,7 +1,9 @@
+
 import { Component, OnInit, inject } from '@angular/core';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { Router } from '@angular/router';
-
+import { Subscription } from 'rxjs';
+import { usuario } from 'src/app/models/bd.models';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,8 +11,13 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent  implements OnInit {
 
+
+  usuario: usuario | null = null;
   private AuthService = inject(AuthService);
   private router = inject(Router);
+  private subscriptionAuthService = new Subscription();
+  tipo: string = '';
+
 
   constructor() { }
 
@@ -20,6 +27,11 @@ export class HomeComponent  implements OnInit {
         this.router.navigate(['']);
       }
     });
+    this.subscriptionAuthService = this.AuthService.usuario$.subscribe(usuario => {
+      this.usuario = usuario;
+      console.log('user:', usuario);
+    });
+
   }
 }
 
