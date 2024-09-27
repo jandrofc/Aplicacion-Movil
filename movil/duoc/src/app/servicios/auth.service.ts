@@ -1,6 +1,8 @@
+
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { usuarioSimulados } from '../models/data.models';
+import { usuario } from '../models/bd.models';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class AuthService {
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
 
-  private usuarioSubject = new BehaviorSubject<string>('');
+  private usuarioSubject = new BehaviorSubject<usuario | null>(null); //importar la interfaz usuario
   usuario$ = this.usuarioSubject.asObservable();
 
   private loginFailSubject = new BehaviorSubject<boolean>(false);
@@ -27,7 +29,7 @@ export class AuthService {
         
       if (usuarioEncontrado) {
         this.isAuthenticatedSubject.next(true);
-        this.usuarioSubject.next(usuarioEncontrado.nombreCompleto);
+        this.usuarioSubject.next(usuarioEncontrado);
         this.loginFailSubject.next(false);
         resolve(true);
       } else {
@@ -40,7 +42,7 @@ export class AuthService {
 }
 
 logout(): void {
-  this.usuarioSubject.next('');
+  this.usuarioSubject.next(null);
   this.isAuthenticatedSubject.next(false);
   this.loginFailSubject.next(false);
 }

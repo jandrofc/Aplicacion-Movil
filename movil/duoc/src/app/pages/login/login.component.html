@@ -1,7 +1,4 @@
 <ion-content>
-  @if (isLoading) {
-    <ion-spinner name="bubbles"></ion-spinner>
-  }
   <div class="padre">
     <div class="cabecera">
       <span class="titulo">RegistrAPP</span>
@@ -12,11 +9,17 @@
 
     <ion-input  type="password" label="Contraseña" labelPlacement="floating" [counter]="true" maxlength="50" [(ngModel)]="clave"></ion-input>
     </div>
+    @if (isLoading) {
+      <ion-spinner name="bubbles" ></ion-spinner>
+    }
+    @else{
     <ion-text color="danger" *ngIf="loginFail">
       Usuario o clave incorrectos.
     </ion-text>
-    <ion-button (click)="login(usuario, clave)" shape="round" [routerLink]="('home')">Ingresar</ion-button>
+    }
+    <ion-button (click)="login(usuario, clave)" shape="round">Ingresar</ion-button>
     <a [routerLink]="('password')">Recuperar contraseña</a>
-  
   </div>
+
+
 </ion-content>

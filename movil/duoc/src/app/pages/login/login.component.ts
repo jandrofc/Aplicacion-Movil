@@ -4,10 +4,15 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { AuthService } from 'src/app/servicios/auth.service';
 
+//import { trigger, transition, style, animate } from '@angular/animations'; // Animaciones de trancicion
+
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+
 })
 export class LoginComponent  implements OnInit {
 
@@ -23,6 +28,15 @@ export class LoginComponent  implements OnInit {
 
   ngOnInit(): void {
     this.authService.loginFail$.subscribe(loginFail => this.loginFail = loginFail);
+
+    this.authService.isAuthenticated$.subscribe(isAuthenticated => {
+      if (isAuthenticated) {
+        this.router.navigate(['/home']);
+      }
+    });
+
+
+
   }
 
   constructor() { }
@@ -43,7 +57,5 @@ export class LoginComponent  implements OnInit {
     } else {
       this.loginFail = true;
     }
-  
-}
-  
   }
+}

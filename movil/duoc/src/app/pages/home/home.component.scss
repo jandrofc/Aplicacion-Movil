@@ -34,20 +34,20 @@ app-header {
   background-color: #1b224f;   /* Color de fondo del cuadro */
 }
 
-.boton {
-  width: 60%;                  /* Ancho del enlace */
-  padding: 10px 20px;           /* Tamaño del enlace */
-  background-color: #ffbf00;;    /* Color de fondo del enlace */
-  color: white;                 /* Color del texto */
-  text-decoration: none;        /* Quitar el subrayado de los enlaces */
-  border-radius: 5px;           /* Esquinas redondeadas */
-  border: none;                 /* Sin borde */
-  display: inline-block;        /* Permitir que el enlace se comporte como botón */
-  text-align: center;           /* Centrar el texto */
-  cursor: pointer;              /* Cambiar el cursor cuando se pasa por encima */
-  transition: background-color 0.3s; /* Transición suave para hover */
+ion-button.boton {
+  --background: #ffbf00;               /* Color de fondo */
+  --color: white;                      /* Color del texto */
+  --border-radius: 5px;                /* Esquinas redondeadas */
+  --border-width: 0;                   /* Sin borde */
+  --padding-start: 20px;               /* Padding izquierdo */
+  --padding-end: 20px;                 /* Padding derecho */
+  --padding-top: 10px;                 /* Padding superior */
+  --padding-bottom: 10px;              /* Padding inferior */
+  width: 60%;                          /* Ancho del botón */
+  text-align: center;                  /* Centrar el texto */
+  transition: background-color 0.3s;   /* Transición suave */
 }
 
-.boton:hover {
-  background-color: #0056b3;    /* Cambiar el color al pasar el mouse */
+ion-button.boton:hover {
+  --background: #0056b3;               /* Cambiar color al pasar el mouse */
 }
