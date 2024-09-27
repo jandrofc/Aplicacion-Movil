@@ -8,11 +8,12 @@ import { SharedModule } from '../shared/shared.module';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { PasswordComponent } from './password/password.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent,LoginComponent,PasswordComponent], //aqui deben ir los componentes que se agregaran
+  declarations: [HomeComponent,LoginComponent,PasswordComponent,PerfilComponent], //aqui deben ir los componentes que se agregaran
   imports: [ // aqui se importa el modulo de rutas
     CommonModule,
     PagesRoutingModule,
