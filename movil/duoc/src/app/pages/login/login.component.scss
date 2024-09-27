@@ -1,3 +1,7 @@
+ion-spinner {
+  color: #333333; /* Cambia #ff0000 por el color que desees */
+}
+
 ion-content {
   --background: #ffffffd6; // Fondo blanco para todo el contenido
   display: flex;
@@ -20,6 +24,7 @@ ion-content {
 
 .cabecera {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px; // Espacio entre el header y los inputs
@@ -33,7 +38,7 @@ ion-content {
 
 .titulo {
   font-size: 1.5rem; // Ajusta el tamaño del texto según sea necesario
-  color: #000000; // Cambia el color del texto si es necesario
+  color: #ffbf00; // Cambia el color del texto si es necesario
 }
 
 ion-item {
@@ -58,3 +63,4 @@ a:hover {
 ion-input{
   color:#030303;
 }
+

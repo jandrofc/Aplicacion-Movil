@@ -4,20 +4,33 @@
   justify-content: center; // Centra el contenido
   align-items: center;
   padding: 10px;
+  background-color: #1b224f; // Color del fondo del header
 }
 
 .logo {
-  width: 50%;
-  padding: 20px; // Ajusta el tamaño del logo según sea necesario
+  width: 60%;
   height: auto;
+  margin-bottom: 10px; // Añade un margen abajo para separar el logo del texto
+  margin-right: 10px; // Añade un margen a la izquierda para separar el logo del texto
 }
 
 .titulo {
   font-size: 1.8rem; // Ajusta el tamaño del texto según sea necesario
-  color: #000000; // Cambia el color del texto a negro
+  color: #ffbf00; // Cambia el color del texto a negro
+  margin-left: 10px;
 }
 
 .saludar {
-  padding-left: 10px;
-  color: #000000; // Color del texto de los párrafos
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #000000;
+}
+
+.saludo {
+  color:#ffffff;
+}
+
+.nombre {
+  color:#ffbf00;
 }
