@@ -6,10 +6,11 @@
       @if(usuario?.tipo == 'alumno'){
         <ion-button [routerLink]="('marcar-asistencia')" class="boton">Marcar Asistencia</ion-button>}
       @else if(usuario?.tipo == 'profesor'){
-        <ion-button [routerLink]="('seleccionar-clase')" class="boton">Seleccionar Clase</ion-button>
+        <ion-button [routerLink]="('clase')" class="boton">Seleccionar Clase</ion-button>
         <ion-button [routerLink]="('registro-asistencia')" class="boton">Registro de Asistencia</ion-button>
       }
       @else{}
+      <ion-button (click)="logout()" class="boton">Cerrar Sesion</ion-button>
     </div>
   </div>
   <ion-card-content>
