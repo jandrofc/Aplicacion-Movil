@@ -1,0 +1,31 @@
+ion-content {
+    --background: #ffffffd6; // Fondo blanco para todo el contenido
+    display: flex;
+    flex-direction: column; // Asegura que los elementos hijos se apilen verticalmente
+    padding: 0; // Elimina el padding para evitar desplazamientos
+    box-sizing: border-box;
+  }
+  
+  app-header {
+    flex-shrink: 0; // Evita que el header se encoja
+  }
+  .imagen{
+    display:flex;
+    justify-content: center;
+    margin-top: 10%;
+  }
+  .imagen-perfil{
+    width: 30%;
+    height: auto;
+  }
+  .nombre-perfil{
+    color: black;
+    display: flex;
+    justify-content: center;
+  }
+  .editar-perfil{
+    width: 30px;
+    margin-left: -20px;
+    margin-top: 10px;
+    border-radius: 50%;
+  }

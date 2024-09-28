@@ -33,5 +33,9 @@ export class HomeComponent  implements OnInit {
     });
 
   }
+  logout() {
+    this.AuthService.logout();
+    this.router.navigate(['']);
+  }
 }
 
