@@ -29,12 +29,6 @@ export class LoginComponent  implements OnInit {
   ngOnInit(): void {
     this.authService.loginFail$.subscribe(loginFail => this.loginFail = loginFail);
 
-    this.authService.isAuthenticated$.subscribe(isAuthenticated => {
-      if (isAuthenticated) {
-        this.router.navigate(['/home']);
-      }
-    });
-
 
 
   }
@@ -46,16 +40,19 @@ export class LoginComponent  implements OnInit {
     this.isLoading = true; 
     this.loginFail = false; 
 
-    const isAuthenticated = await this.authService.BuscarBD(usuario, clave);
+    await this.authService.BuscarBD(usuario, clave);
 
     this.isLoading = false;
 
-    if (isAuthenticated) {
-      this.usuario = '';
-      this.clave = '';
-      this.router.navigate(['/home']);
-    } else {
-      this.loginFail = true;
-    }
-  }
+    this.authService.isAuthenticated$.subscribe(isAuthenticated => {
+        if (isAuthenticated) {
+          this.usuario = ''; // Limpiar el campo de usuario
+          this.clave = ''; // Limpiar el campo de clave
+        } else {
+          this.loginFail = true; // Mostrar mensaje de error si el login falla
+        }
+
+      });
+
+    };
 }
