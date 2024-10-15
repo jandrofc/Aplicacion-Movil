@@ -48,6 +48,7 @@ export class LoginComponent  implements OnInit {
         if (isAuthenticated) {
           this.usuario = ''; // Limpiar el campo de usuario
           this.clave = ''; // Limpiar el campo de clave
+          this.router.navigate(['/home']); // Redirigir a la página de home si el login es exitoso
         } else {
           this.loginFail = true; // Mostrar mensaje de error si el login falla
         }
