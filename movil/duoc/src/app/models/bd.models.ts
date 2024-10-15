@@ -1,7 +1,8 @@
 export interface usuario {
-    id: string;
-    nombreCompleto: string;
-    usuario: string;
-    clave: string;
-    tipo: string;
+    usuario:string;
+    nombreCompleto:string;
+    tipo:string;
+    clave:string;
+    correo:string;
+    id:string;
   }

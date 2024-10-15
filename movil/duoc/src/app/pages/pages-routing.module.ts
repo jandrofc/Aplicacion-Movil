@@ -9,14 +9,15 @@ import { RegistroAsistenciaComponent } from './registro-asistencia/registro-asis
 import { RegistrarComponent } from './registrar/registrar.component';
 
 const routes: Routes = [
-  {path:'',component:LoginComponent},
   {path:'home', component: HomeComponent},
   {path:'login', component: LoginComponent},
   {path:'password',component:PasswordComponent},
   {path:'home/perfil',component:PerfilComponent},
   {path:'home/clase',component:ClaseComponent},
   {path:'home/registro-asistencia',component:RegistroAsistenciaComponent},
-  {path: 'home/registrar', component:RegistrarComponent}
+  {path: 'home/registrar', component:RegistrarComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirigir a 'login' si la ruta está vacía
+  {path: '**', redirectTo: 'login', pathMatch: 'full' }, // Redirigir a 'login' para rutas no encontradas
 ];
 
 @NgModule({

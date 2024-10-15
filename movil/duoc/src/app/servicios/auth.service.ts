@@ -1,5 +1,4 @@
-import { usuario } from './../models/bd.models';
-
+import { usuario } from '../models/bd.models';
 import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs'
 import { WebService } from './web.service';
@@ -14,64 +13,64 @@ export class AuthService {
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
 
-  private usuarioSubject = new BehaviorSubject<String>(''); //importar la interfaz usuario
+  private usuarioSubject = new BehaviorSubject<usuario | null>(null); //importar la interfaz usuario
   usuario$ = this.usuarioSubject.asObservable();
 
-  private usuarioTipoSubject = new BehaviorSubject<usuario | null>(null);
+  private usuarioTipoSubject = new BehaviorSubject<String>('');
   usuarioTipo$ = this.usuarioTipoSubject.asObservable();
 
   private loginFailSubject = new BehaviorSubject<boolean>(false);
   loginFail$ = this.loginFailSubject.asObservable();
 
   webservice = inject(WebService);
-  async BuscarBD(usuario: string, clave: string) {
-    const url = 'https://66feda392b9aac9c997d9a7c.mockapi.io/app/'
-    const res = await this.webservice.request('GET', url, 'users') as Array<usuario>;
 
+  url = 'https://670e92f43e71518616551dc2.mockapi.io/testapp/' 
+
+
+  async BuscarBD(usuario: string, clave: string) {
+    const res = await this.webservice.request('GET', this.url, 'usuarios') as Array<usuario>;
     const user = res.find(u => u.usuario === usuario && u.clave === clave);
         
       if (user) {
         this.isAuthenticatedSubject.next(true);
-        this.usuarioSubject.next(user.tipo);
-        this.usuarioTipoSubject.next(user);
+        this.usuarioSubject.next(user);
+        this.usuarioTipoSubject.next(user.tipo);
         this.loginFailSubject.next(false);
       } else {
         this.isAuthenticatedSubject.next(false);
         this.loginFailSubject.next(true);
       }
     }
-
-    async registrarNuevoUsuario(usuario: any) {
-      const url = 'https://66feda392b9aac9c997d9a7c.mockapi.io/app/';
-      try {
-        const usuariosExistentes = await this.obtenerUsuarios();
-        const usuarioExistente = usuariosExistentes.find( u => u.usuario === usuario.user);
-
-        if (usuarioExistente) {
-          throw new Error('El usuario ya existe');
-        }
-
-        const res = await this.webservice.request('POST', url, 'users', usuario);
-        console.log('Usuario registrado con exito', res);
-        return res;
-      } catch (error) {
-        throw error;
-      }
+  async obtenerUsuarios(): Promise<usuario[]> {
+    try {
+      const res = await this.webservice.request('GET', this.url, 'usuarios') as Array<usuario>;
+      return res;
+    } catch (error) {
+      throw error;
     }
+  }
 
-    async obtenerUsuarios(): Promise<usuario[]> {
-      const url = '';
-      try {
-        const res = await this.webservice.request('GET', url, 'users') as Array<usuario>;
-        return res;
-      } catch (error) {
-        throw error;
+  async registrarNuevoUsuario(usuario: any) {
+    try {
+      const usuariosExistentes = await this.obtenerUsuarios();
+      const usuarioExistente = usuariosExistentes.find( u => u.usuario === usuario.user);
+
+      if (usuarioExistente) {
+        throw new Error('El usuario ya existe');
       }
+
+      const res = await this.webservice.request('POST', this.url, 'usuarios', usuario);
+      console.log('Usuario registrado con exito', res);
+      return res;
+    } catch (error) {
+      throw error;
     }
+  }
 
 logout(): void {
-  this.usuarioSubject.next('');
   this.isAuthenticatedSubject.next(false);
+  this.usuarioSubject.next(null);
+  this.usuarioTipoSubject.next('');
   this.loginFailSubject.next(false);
 }
 
