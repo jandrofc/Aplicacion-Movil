@@ -14,7 +14,6 @@ import { RegistroAsistenciaComponent } from './registro-asistencia/registro-asis
 import { RegistrarComponent } from './registrar/registrar.component';
 
 
-
 @NgModule({
   declarations: [HomeComponent,LoginComponent,PasswordComponent,PerfilComponent,ClaseComponent,RegistroAsistenciaComponent, RegistrarComponent], //aqui deben ir los componentes que se agregaran
   imports: [ // aqui se importa el modulo de rutas
