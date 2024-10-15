@@ -1,4 +1,3 @@
-import { usuario } from './../../models/bd.models';
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';

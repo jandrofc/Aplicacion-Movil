@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'home/perfil',component:PerfilComponent},
   {path:'home/clase',component:ClaseComponent},
   {path:'home/registro-asistencia',component:RegistroAsistenciaComponent},
-  {path: 'home/registrar', component:RegistrarComponent},
+  {path: 'registrar', component:RegistrarComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirigir a 'login' si la ruta está vacía
   {path: '**', redirectTo: 'login', pathMatch: 'full' }, // Redirigir a 'login' para rutas no encontradas
 ];

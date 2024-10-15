@@ -16,8 +16,9 @@
     <ion-text color="danger" *ngIf="loginFail">
       Usuario o clave incorrectos.
     </ion-text>
+    <a [routerLink]="('/password')">Recuperar contraseña</a>
     }
     <ion-button (click)="login(usuario, clave)" shape="round">Ingresar</ion-button>
-    <a [routerLink]="('password')">Recuperar contraseña</a>
+    <a [routerLink]="('/registrar')">Registrarse</a>
   </div>
 </ion-content>
