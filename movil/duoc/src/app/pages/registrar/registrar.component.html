@@ -1,0 +1,26 @@
+<ion-content>
+  <div class="padre">
+    <div class="cabecera">
+      <span class="titulo">RegistrAPP</span>
+      <ion-img class="logo" src="../../assets/img/duoc.png" alt="Asistencia"></ion-img>
+    </div>
+    <div>
+      <ion-input label="Usuario" labelPlacement="floating" [counter]="true" maxlength="50" [(ngModel)]="usuario"></ion-input>
+
+      <ion-input  type="password" label="Contraseña" labelPlacement="floating" [counter]="true" maxlength="50" [(ngModel)]="clave"></ion-input>
+    
+      <ion-input label="Nombre" labelPlacement="floating" maxlength="50" [(ngModel)]="nombreCompleto"></ion-input>
+
+      <ion-input label="tipo" labelPlacement="floating"></ion-input>
+      <ion-select [(ngModel)]="tipo">
+        <ion-select-option value="profesor">Profesor</ion-select-option>
+        <ion-select-option value="alumno">Alumno</ion-select-option>
+      </ion-select>
+    
+    </div>
+    
+    <ion-button (click)="registrar()" shape="round">Registrar</ion-button>
+  </div>
+
+
+</ion-content>
