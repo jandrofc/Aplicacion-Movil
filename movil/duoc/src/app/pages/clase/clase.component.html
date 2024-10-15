@@ -1,23 +1,15 @@
 <ion-content>
   <app-header></app-header>
   <div class="contenedor">
-  <table class="clases">
-    <thead>
-        <tr>
-            <th>Asignatura</th>
-            <th>Asistencia</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Matemáticas</td>
-            <td><ion-button [routerLink]="('a')" class="boton">Generar QR</ion-button></td>
-        </tr>
-        <tr>
-            <td>Lenguaje</td>
-            <td><ion-button [routerLink]="('a')" class="boton">Generar QR</ion-button></td>
-        </tr>
-    </tbody>
-</table>
+  <ion-list>
+    <ion-item *ngFor="let asig of asignaturas">
+        <div>
+            <div>
+                {{asig.nombre}} - {{asig.id}}
+            </div>
+        </div>
+        <ion-button fill="outline" class="generar-curre-button"></ion-button>
+    </ion-item>
+  </ion-list>
 </div>
 </ion-content>
