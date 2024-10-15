@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { PasswordComponent } from './password/password.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ClaseComponent } from './clase/clase.component';
-
+import { RegistroAsistenciaComponent } from './registro-asistencia/registro-asistencia.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -13,7 +13,8 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'password',component:PasswordComponent},
   {path:'home/perfil',component:PerfilComponent},
-  {path:'home/clase',component:ClaseComponent}
+  {path:'home/clase',component:ClaseComponent},
+  {path:'home/registro-asistencia',component:RegistroAsistenciaComponent}
 ];
 
 @NgModule({
