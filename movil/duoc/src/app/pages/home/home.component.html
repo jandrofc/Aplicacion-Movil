@@ -3,9 +3,9 @@
   <div class="contenedor-menu">
     <div class="menu">
       <ion-button [routerLink]="('perfil')" class="boton">Perfil</ion-button>
-      @if(usuario?.tipo == 'alumno'){
+      @if(usuario?.tipo == 'Alumno'){
         <ion-button [routerLink]="('marcar-asistencia')" class="boton">Marcar Asistencia</ion-button>}
-      @else if(usuario?.tipo == 'profesor'){
+      @else if(usuario?.tipo == 'Profesor'){
         <ion-button [routerLink]="('clase')" class="boton">Seleccionar Clase</ion-button>
         <ion-button [routerLink]="('registro-asistencia')" class="boton">Registro de Asistencia</ion-button>
       }

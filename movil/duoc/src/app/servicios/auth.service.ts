@@ -26,11 +26,9 @@ export class AuthService {
 
   url = 'https://670e92f43e71518616551dc2.mockapi.io/testapp/' 
 
-
   async BuscarBD(usuario: string, clave: string) {
     const res = await this.webservice.request('GET', this.url, 'usuarios') as Array<usuario>;
     const user = res.find(u => u.usuario === usuario && u.clave === clave);
-        
       if (user) {
         this.isAuthenticatedSubject.next(true);
         this.usuarioSubject.next(user);
@@ -40,6 +38,7 @@ export class AuthService {
         this.isAuthenticatedSubject.next(false);
         this.loginFailSubject.next(true);
       }
+
     }
   async obtenerUsuarios(): Promise<usuario[]> {
     try {
