@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:'home/perfil',component:PerfilComponent , canActivate: [authGuard]},
   {path:'home/clase',component:ClaseComponent, canActivate: [authGuard]},
   {path:'home/registro-asistencia',component:RegistroAsistenciaComponent, canActivate: [authGuard]},
-  {path: 'home/registrar', component:RegistrarComponent,canActivate: [redirectIfAuthGuard]},
+  {path:'registrar', component:RegistrarComponent,canActivate: [redirectIfAuthGuard]},
   {path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirigir a 'login' si la ruta está vacía
   {path: '**', redirectTo: 'login', pathMatch: 'full' }, // Redirigir a 'login' para rutas no encontradas
 ];

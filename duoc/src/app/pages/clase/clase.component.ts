@@ -1,4 +1,3 @@
-
 import { Component, ElementRef, inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
 // @ts-ignore
 import QRious from 'qrious';

@@ -36,27 +36,37 @@ export class RegistrarComponent {
   }
 
   async registrar() {
-    this.registroFallido = false;
+    if(this.nombreCompleto === '' || this.usuario === '' || this.clave === '' || this.tipo === '') {
+      this.errorMessage = 'Por favor, complete todos los campos.';
+      await this.mostrarAlerta('Error', this.errorMessage);
+      return;
+    }
 
+    this.errorMessage = '';
+    this.successMessage = '';
+    this.registroFallido = false;
+    
     const usuarioExiste = await this.validarUsuarioExistente(this.usuario);
 
     if (usuarioExiste) {
+      this.errorMessage = 'El usuario ya existe. Por favor, elija otro.';
       this.registroFallido = true;
       await this.mostrarAlerta('Error', this.errorMessage);
       return;
     }
 
-    const nuevoUsuario = {
-      name: this.nombreCompleto,
-      user: this.usuario,
-      pass: this.clave,
-      type: this.tipo
-    };
+    const usuario = {
+      nombreCompleto: this.nombreCompleto,
+      usuario: this.usuario,
+      clave: this.clave,
+      tipo: this.tipo};
 
     try {
-      await this.authService.registrarNuevoUsuario(nuevoUsuario);
+      await this.authService.registrarNuevoUsuario(usuario);
+      this.successMessage = 'Usuario registrado exitosamente';
       await this.mostrarAlerta('Exito', this.successMessage);
     } catch (error) {
+      this.errorMessage = 'Error al registrar el usuario';
       this.registroFallido = true;
       await this.mostrarAlerta('Error', this.errorMessage);
     }
