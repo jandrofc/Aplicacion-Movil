@@ -1,5 +1,4 @@
 import { Component, ElementRef, inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
-// @ts-ignore
 import QRious from 'qrious';
 import { Subscription } from 'rxjs';
 import { usuario } from 'src/app/models/bd.models';
