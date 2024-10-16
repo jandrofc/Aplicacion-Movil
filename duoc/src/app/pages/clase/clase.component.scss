@@ -52,3 +52,13 @@ ion-content {
 .clases tbody tr:hover {
     background-color: #f1f1f1;
 }
+#qr-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    height: 60%;
+    width: 100%;
+    background-color: black;
+}
