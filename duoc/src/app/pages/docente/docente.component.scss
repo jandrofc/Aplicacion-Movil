@@ -1,0 +1,53 @@
+ion-content {
+    --background: #ffffffd6; // Fondo blanco para todo el contenido
+    display: flex;
+    flex-direction: column; // Asegura que los elementos hijos se apilen verticalmente
+    padding: 0; // Elimina el padding para evitar desplazamientos
+    box-sizing: border-box;
+  }
+  
+  app-header {
+    flex-shrink: 0; // Evita que el header se encoja
+  }
+  
+  .contenedor-menu {
+    display: flex;
+    justify-content: center; // Distribuye los elementos uniformemente
+    align-items: center;
+    padding: 20px;
+    height: 80%;
+    width: 100%; // Asegura que el contenedor ocupe todo el ancho
+    box-sizing: border-box; // Incluye el padding en el ancho total
+    flex-shrink: 0; // Evita que el contenedor se encoja
+  }
+  
+  .menu {
+    width: 80%;               /* Ancho del cuadro */
+    padding: 20px;              /* Espacio interno del cuadro */
+    border: 2px solid #000;      /* Borde del cuadro */
+    border-radius: 10px;         /* Esquinas redondeadas */
+    display: flex;               /* Flexbox para alinear los enlaces */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;                  /* Espacio entre los enlaces */
+    background-color: #1b224f;   /* Color de fondo del cuadro */
+  }
+  
+  ion-button.boton {
+    --background: #ffbf00;               /* Color de fondo */
+    --color: white;                      /* Color del texto */
+    --border-radius: 5px;                /* Esquinas redondeadas */
+    --border-width: 0;                   /* Sin borde */
+    --padding-start: 20px;               /* Padding izquierdo */
+    --padding-end: 20px;                 /* Padding derecho */
+    --padding-top: 10px;                 /* Padding superior */
+    --padding-bottom: 10px;              /* Padding inferior */
+    width: 60%;                          /* Ancho del botón */
+    text-align: center;                  /* Centrar el texto */
+    transition: background-color 0.3s;   /* Transición suave */
+  }
+  
+  ion-button.boton:hover {
+    --background: #0056b3;               /* Cambiar color al pasar el mouse */
+  }

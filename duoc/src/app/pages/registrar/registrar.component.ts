@@ -65,6 +65,7 @@ export class RegistrarComponent {
       await this.authService.registrarNuevoUsuario(usuario);
       this.successMessage = 'Usuario registrado exitosamente';
       await this.mostrarAlerta('Exito', this.successMessage);
+      this.router.navigate(['/login']);
     } catch (error) {
       this.errorMessage = 'Error al registrar el usuario';
       this.registroFallido = true;

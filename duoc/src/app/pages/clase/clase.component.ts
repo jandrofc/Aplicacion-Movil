@@ -40,7 +40,7 @@ export class ClaseComponent implements OnInit, OnDestroy {
 
     // Concatenar la fecha y hora con el formato deseado
     const fechaHora = `${año}-${mes}-${día},${horas}:${minutos}:${segundos}`;
-    this.qrData = `http://localhost:8100/asistencia/${asignaturaId}/${this.usuario}/${fechaHora}`;
+    this.qrData = `http://localhost:8100/asistencia/${asignaturaId}/${this.usuario.nombreCompleto}/${fechaHora}`;
 
     this.showQRCode = true; // Muestra el código QR
     this.createQR(); // Genera el código QR

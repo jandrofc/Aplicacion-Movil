@@ -5,12 +5,11 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-alumno',
+  templateUrl: './alumno.component.html',
+  styleUrls: ['./alumno.component.scss'],
 })
-export class HomeComponent  implements OnInit {
-
+export class AlumnoComponent  implements OnInit {
 
   usuario: usuario | null = null;
   private AuthService = inject(AuthService);
@@ -28,7 +27,6 @@ export class HomeComponent  implements OnInit {
   }
   logout() {
     this.AuthService.logout();
-    this.router.navigate(['']);
+    this.router.navigate(['logout']);
   }
 }
-
