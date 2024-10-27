@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { addIcons } from 'ionicons';
+import { home, person, book, checkmarkCircleOutline } from 'ionicons/icons';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/servicios/auth.service';
+import { usuario } from '../../models/bd.models';
 
 @Component({
   selector: 'app-footer',
@@ -7,8 +12,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent  implements OnInit {
 
+  private authService = inject(AuthService);
+  usuario: usuario | null = null;
+
+  subscriptionAuthService: Subscription = new Subscription();
+
+
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.subscriptionAuthService = this.authService.usuario$.subscribe(usuario => {
+      this.usuario = usuario;
+      console.log('Header:', usuario);
+    });
+    addIcons({ home, person, book, checkmarkCircleOutline });
+  }
 
 }

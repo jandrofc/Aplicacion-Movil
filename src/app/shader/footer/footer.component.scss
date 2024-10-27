@@ -1,0 +1,35 @@
+.abajo {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #000000; /* Fondo del menú */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: auto;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto */
+  }
+  
+  .link ion-icon {
+    font-size: 30px; /* Ajusta el tamaño del icono según sea necesario */
+    margin-bottom: 4px; /* Espacio entre el icono y el texto */
+  }
+  
+  .link span {
+    color: #ffbf00;
+    font-size: 15px;
+    margin: 0 1em;
+    display: flex;
+    align-items: center;
+  }

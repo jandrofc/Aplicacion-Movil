@@ -1,3 +1,33 @@
-<p>
-  footer works!
-</p>
+<div class="abajo">
+  @if (usuario?.tipo === 'Profesor'){
+  <a [routerLink]="('/docente')" class="link">
+    <ion-icon name="home"></ion-icon>
+    <span>Inicio</span>
+  </a>
+  }
+  @else {
+    <a [routerLink]="('/alumno')" class="link">
+      <ion-icon name="home"></ion-icon>
+      <span>Inicio</span>
+    </a>
+    }
+  <a [routerLink]="('/perfil')" class="link">
+    <ion-icon name="person"></ion-icon>
+    <span>Perfil</span>
+  </a>
+  @if (usuario?.tipo === 'Profesor'){
+  <a [routerLink]="('/docente/clase')" class="link">
+    <ion-icon name="book"></ion-icon>
+    <span>Clases</span>
+  </a>
+  <a [routerLink]="('/docente/registro-asistencia')" class="link">
+    <ion-icon name="checkmark-circle-outline"></ion-icon>
+    <span>Asistencia</span>
+  </a>}
+  @else {
+  <a [routerLink]="('/alumno/asignaturas')" class="link">
+    <ion-icon name="book"></ion-icon>
+    <span>Clases</span>
+  </a>
+  }
+  </div>

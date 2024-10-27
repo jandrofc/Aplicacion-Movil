@@ -12,9 +12,10 @@
     </ion-item>
   </ion-list>
 </div>
-  <div class="mx-auto text-center" id="qr-content">
+  <div class="mx-auto text-center" id="qr-content" *ngIf="showQRCode">
     <h2>Código QR</h2>
     <h3>{{ qrData }}</h3>
     <canvas #qrCanvas></canvas>
   </div>
+  <app-footer></app-footer>
 </ion-content>
