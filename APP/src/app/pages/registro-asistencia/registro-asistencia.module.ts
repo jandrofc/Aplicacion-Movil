@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { RegistroAsistenciaPageRoutingModule } from './registro-asistencia-routing.module';
 
 import { RegistroAsistenciaPage } from './registro-asistencia.page';
+import { ShaderModule } from 'src/app/shader/shader.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegistroAsistenciaPageRoutingModule
+    RegistroAsistenciaPageRoutingModule,
+    ShaderModule
   ],
   declarations: [RegistroAsistenciaPage]
 })
